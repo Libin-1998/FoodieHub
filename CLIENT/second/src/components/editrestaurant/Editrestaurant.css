@@ -1,0 +1,57 @@
+.reshead{
+    text-align: center;
+    color: orange;
+}
+.resinput{
+    width: 60%;
+    height: 31px;
+
+}
+.reslabel{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: left;
+    float: left;
+    margin: 0%;
+}
+.resspan{
+    color: red;
+}
+.resbutton{
+    padding: 10px;
+    background-color: orange;
+    color: white;
+    border: none;
+}
+.form{
+    padding-left: 300px;
+}
+.reseditbutton{
+    text-align: center;
+margin-bottom: 10px;
+}
+@media(max-width:416px){
+    .form,.reseditbutton{
+        padding-left: 10px;
+    }
+    
+}
+@media(max-width:921px){
+    .form{
+        padding-left: 230px;
+    }
+}
+@media(max-width:762px){
+    .form{
+        padding-left: 180px;
+    }
+}
+@media(max-width:668px){
+    .form{
+        padding-left: 150px;
+    }
+}
+@media(max-width:452px){
+    .form{
+        padding-left: 100px;
+    }
+}

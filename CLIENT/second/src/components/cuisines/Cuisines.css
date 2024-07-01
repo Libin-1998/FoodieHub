@@ -1,0 +1,31 @@
+.browse{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(212, 74, 74, 0.866);
+    padding: 50px;
+}
+.items{
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 30%;
+}
+.morespace{
+    width: 60%;
+
+}
+.center{
+    margin: 10px;
+    padding-left: 30%;
+}
+@media(max-width:950px){
+    .items{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media(max-width:400px){
+    .browse{
+        display: flex;
+        flex-direction: column;
+    }
+}

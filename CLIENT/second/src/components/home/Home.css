@@ -1,0 +1,66 @@
+.food{
+    background-image: url(../../../public/images/foodBG-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+  }
+
+.near{
+    text-align: center;
+    padding-top: 70px;
+    text-shadow: 3px 3px 2px black;
+    color: white;
+    
+  }
+  .nearyou{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  .search{
+    padding: 15px;
+    border-radius: 30px;
+    /* text-align: center; */
+    border: none;
+    width: 350px;
+   
+  }
+  .searchbox{
+    text-align: center;
+    position: relative;
+  
+  }
+  .icon{
+    position: absolute;
+    top: 16px;
+    right: 36%;
+  }
+  @media(max-width:1076px){
+    .search{
+      width: 320px;
+    }
+  }
+  @media(max-width:992px){
+    .search{
+      width: 290px;
+    }
+  }
+  @media(max-width:786px){
+    .search{
+      width: 210px;
+    }
+  }
+  @media(max-width:576px){
+    .search{
+      width: 180px;
+    }
+  }
+  @media(max-width:540px){
+    .icon{
+      display: none;
+    }
+    .search{
+      width: 150px;
+    }
+  }
+  

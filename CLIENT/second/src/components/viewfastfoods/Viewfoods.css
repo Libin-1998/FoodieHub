@@ -1,0 +1,42 @@
+.viewhead{
+    text-align: center;
+}
+.table{
+border-collapse: collapse;
+width: 70%;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 30px;
+
+}
+th,td{
+   border: solid 1px; 
+   height: 80px;
+   width: 100px;
+}
+tr:nth-child(even){
+    background-color: gray;
+}
+@media(max-width:680px){
+    .table{
+        width: 100%;
+    }
+}
+.tdedit{
+    border: none;
+    background-color: green;
+    margin-right: 5px;
+    padding: 5px;
+
+}
+.tddelete{
+    border: none;
+    background-color: red;
+    margin-right: 5px;
+    padding: 5px;
+
+}
+.imgcircle{
+    border-radius: 100%;
+}

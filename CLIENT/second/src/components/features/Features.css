@@ -1,0 +1,27 @@
+.features{
+    text-align: center;
+}
+.featurerow{
+    display: flex;
+    justify-content: space-evenly;
+}
+.bgcolors{
+    background-color: white;
+    padding: 50px;
+}
+.defaultrow{
+    display: flex;
+    column-gap: 7px;
+}
+@media(max-width:980px){
+    .defaultrow{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media(max-width:810px){
+    .featurerow{
+        display: flex;
+        flex-direction: column;
+    }
+}

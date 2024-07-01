@@ -1,0 +1,46 @@
+.resimgone{
+    height: 200px;
+    width: 300px;
+}
+.resimgtwo{
+    height: 200px;
+    width: 300px;
+}
+.resimgthree{
+    height: 200px;
+    width: 300px;
+}
+.resimgfour{
+    height: 200px;
+    width: 300px;
+}
+.resimgfive{
+    height: 200px;
+    width: 300px;
+}
+.resrow{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+.honeres{
+    text-align: center;
+    background-color: pink;
+    padding: 10px;
+}
+.wordsalign{
+    padding-left: 60px;
+}
+.resedit{
+    background-color: green;
+border: none;
+padding: 3px;
+margin-right: 2px;
+}
+.resdelete{
+    background-color: red;
+border: none;
+padding: 3px;
+margin-bottom: 5px;
+}
