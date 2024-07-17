@@ -37,11 +37,12 @@ export default function Editfood() {
 
       const imagechange=(event)=>{
         setsubmitfd({...submitfd,image:event.target.files[0]})
-        console.log(submitfd.image);
+        console.log(submitfd.image);  
       }
     
       const submitclick = (event) => {
         event.preventDefault();
+
         const data=new FormData()
         data.append('name',submitfd.name)
         data.append('price',submitfd.price)
