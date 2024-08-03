@@ -1,6 +1,11 @@
 var express=require('express')
 var mongoose=require('mongoose')
 const multer=require('multer')
+const restaurantSchema = require('../models/restaurantSchema')
+const auth = require('../middlewares/auth')
+
+
+var restaurantRoutes=express.Router()
 
 const storage=multer.diskStorage({
     destination:function(req,file,cb){
@@ -11,12 +16,7 @@ const storage=multer.diskStorage({
 const upload=multer({storage})
 
 
-const restaurantSchema = require('../models/restaurantSchema')
-const auth = require('../middlewares/auth')
-
-var restaurantRoutes=express.Router()
-
-restaurantRoutes.post('/add_res',upload.single('image'),  async(req,res)=>{
+restaurantRoutes.post('/add_res',upload.single('image'),auth,async(req,res)=>{
     const rest={
         name:req.body.name,
         state:req.body.state,
@@ -80,6 +80,29 @@ restaurantRoutes.get('/view/:id',async(req,res)=>{
         })
     }
 })
+
+
+restaurantRoutes.get('/viewdata/:name',auth,async(req,res)=>{
+    const viewed= await restaurantSchema.findOne({name:req.params.name})
+    if(viewed){
+       return res.status(200).json({
+            success:true,
+            error:false,
+            message:'single view success',
+            data:viewed,
+        })
+    }
+    else{
+       return res.status(400).json({
+            success:false,
+            error:true,
+            message:'not viewed'
+        })
+    }
+})
+
+
+
 
 restaurantRoutes.delete('/delete/:id',async(req,res)=>{
     const deleted=await restaurantSchema.deleteOne({_id:req.params.id})

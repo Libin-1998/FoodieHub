@@ -1,16 +1,18 @@
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import "./Fastfood.css";
-import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 
 export default function Fastfood() {
+
+
+  const token=sessionStorage.getItem('token')
+
+  const [submitfd, setsubmitfd] = useState({});
   const navigate=useNavigate()
-  const [submitfd, setsubmitfd] = useState({
-    name: "",
-    price: "",
-    quality: "",
-  });
+
+
   const submitchange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -33,10 +35,11 @@ export default function Fastfood() {
 
 
     axios
-      .post("http://localhost:6060/api/food/add", formdata)
+      .post("http://localhost:6060/api/food/add", formdata,
+        {headers:{Authorization:`Bearer ${token}`}}
+      )
       .then((response) => {
-        // console.log(response);
-        console.log(response.data.message);
+        console.log(response);
         toast.success(response.data.message)
 
         setTimeout(()=>{
@@ -55,7 +58,7 @@ export default function Fastfood() {
   return (
     <>
       <div className="container-fluid bgfastfood">
-      <form onSubmit={submitclick}>
+      <form onSubmit={submitclick} encType="multipart/form-data">
 
         <ToastContainer/>
         <h1 className="fdhead">FAST FOODS </h1>

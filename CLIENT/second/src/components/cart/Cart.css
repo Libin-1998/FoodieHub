@@ -1,0 +1,110 @@
+.fdcartpage{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.buybutton{
+    color: rgb(255, 254, 254);
+    background-color: rgb(5, 40, 83);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.plusminus{
+  font-size: larger;
+  color: red;
+}
+
+.favorites:focus{
+  color: red;
+}
+
+
+
+/* checkout */
+
+.checkoutpage{
+    border:1px solid rgb(210, 206, 206);
+    height: 150px;
+    width: 300px;
+    padding: 30px 10px 10px 10px;
+    border-radius: 5px ;
+}
+.fdcheckout {
+    border-radius: 9px 9px 19px 19px;
+  }
+  
+  .fdcheckout .fddetails {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 10px;
+    gap: 5px;
+  }
+  
+  .fdcheckout .fddetails span {
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
+  .fdcheckout .fddetails span:nth-child(odd) {
+    font-size: 11px;
+    font-weight: 700;
+    color: #707175;
+    margin: auto auto auto 0;
+  }
+  
+  .fdcheckout .fddetails span:nth-child(even) {
+    font-size: 13px;
+    font-weight: 600;
+    color: #47484b;
+    margin: auto 0 auto auto;
+  }
+  
+  .fdcheckout .fdcheckout--footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px 10px 20px;
+    background-color: #efeff3;
+  }
+  
+  .fdprice {
+    position: relative;
+    font-size: 22px;
+    color: #2B2B2F;
+    font-weight: 900;
+  }
+  
+  .fdprice sup {
+    font-size: 13px;
+  }
+  
+  .fdprice sub {
+    width: fit-content;
+    position: absolute;
+    font-size: 11px;
+    color: #5F5D6B;
+    bottom: 5px;
+    display: inline-block;
+  }
+  
+  .fdcheckout .fdcheckout-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 36px;
+    background: linear-gradient(180deg, #4480FF 0%, #115DFC 50%, #0550ED 100%);
+    box-shadow: 0px 0.5px 0.5px #EFEFEF, 0px 1px 0.5px rgba(239, 239, 239, 0.5);
+    border-radius: 7px;
+    border: 0;
+    outline: none;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+  }

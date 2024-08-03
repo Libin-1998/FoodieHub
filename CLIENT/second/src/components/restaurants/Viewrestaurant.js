@@ -6,10 +6,19 @@ import { ToastContainer, toast } from 'react-toastify'
 
 export default function Viewrestaurant() {
 
-    const[card,setCard]=useState([])
+    const logintoken=sessionStorage.getItem('token')
+    const role=sessionStorage.getItem('role')
 
+    const[card,setCard]=useState([])
+    const[items,setItems]=useState([])
+    const[searchTerm,setSearchterm]=useState('')
+
+
+    
     useEffect(()=>{
-        axios.get("http://localhost:6060/api/newres/view")
+        axios.get("http://localhost:6060/api/newres/view",{
+            headers:{Authorization:`Bearer ${logintoken}`}
+        })
         .then((response)=>{
             console.log(response);
             setCard(response.data.data)
@@ -20,6 +29,20 @@ export default function Viewrestaurant() {
         })
     },[])
     console.log(card);
+
+
+
+    // useEffect(() => {
+    //     setCard(card);
+    //   }, [card]);
+
+
+    //   useEffect(() => {
+    //     setItems(items);
+    //   }, [items]);
+
+
+
 
     const resDelete=(id)=>{
         console.log(id);
@@ -40,14 +63,41 @@ export default function Viewrestaurant() {
         
     }
 
+    const searchbutton=()=>{
+        setItems(card.filter(item=>item.name.toLowerCase().includes(searchTerm.toLowerCase())))
+    }
+    console.log(items);
+
+    const dataChange=(event)=>{
+    setSearchterm(event.target.value)
+}
+
   return (
     <>
     <div className='container-fluid viewres'>
 <ToastContainer/>
-        <h1 className='honeres'>RESTAURANTS</h1>
+
+<div className='ressearchbox'>
+          <h1 className='resviewhead'>RESTAURANT</h1>
+          <div className='resinputbutton'>
+            <input
+              type="text"
+              className='ressearch'
+              onChange={dataChange}
+              name='search'
+              value={searchTerm}
+             
+            />
+            <button className='ressearchbut' onClick={searchbutton}>Search</button>
+          </div>
+        </div>
 
     <div className='resrow'>
+
+        {items.length==0 ?(<>
+        
         {card.map((fivestar)=>(
+            
             <div className='rescol'>
             <img src={`/images/${fivestar.image}`} className='resimgone'></img>
             <div className='wordsalign'>
@@ -55,13 +105,36 @@ export default function Viewrestaurant() {
             <h3>{fivestar.state}</h3>
             <h3>{fivestar.city}</h3>
             <h3>{fivestar.time}</h3>
-            <button className='resedit'><Link to={`/editrestaurant/${fivestar._id}`}>Edit</Link></button>
+            {role=='admin' ?(<>
+            <button className='resedit'><Link to={`/editrestaurant/${fivestar._id}`} className='reseditlink'>Edit</Link></button>
             <button className='resdelete' onClick={()=>resDelete(fivestar._id)}>Delete</button>
+            </>):('')}
+            {}
+            </div>
+        </div>
+        ))}
+        
+        </>):(<>
+        {items.map((datas)=>(
 
+<div className='rescol'>
+            <img src={`/images/${datas.image}`} className='resimgone'></img>
+            <div className='wordsalign'>
+            <h2>{datas.name}</h2>
+            <h3>{datas.state}</h3>
+            <h3>{datas.city}</h3>
+            <h3>{datas.time}</h3>
+            {role=='admin' ?(<>
+            <button className='resedit'><Link to={`/editrestaurant/${datas._id}`} className='reseditlink'>Edit</Link></button>
+            <button className='resdelete' onClick={()=>resDelete(datas._id)}>Delete</button>
+            </>):('')}
+            {}
             </div>
         </div>
 
-        ))}
+))}
+         
+        </>)}
         
         </div>
     </div>

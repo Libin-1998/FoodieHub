@@ -1,6 +1,4 @@
-.viewhead{
-    text-align: center;
-}
+
 .table{
 border-collapse: collapse;
 width: 70%;
@@ -35,8 +33,53 @@ tr:nth-child(even){
     background-color: red;
     margin-right: 5px;
     padding: 5px;
+    color: white;
 
 }
 .imgcircle{
     border-radius: 100%;
+}
+
+.editlinks{
+    color: white;
+}
+
+.buybutton{
+    border: none;
+}
+
+.fdsearchbox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    gap: 40px;
+    
+}
+.viewhead{
+    margin: 0;
+}
+.foodsearch{
+    height: 30px;
+   width:250px;
+   border-radius:10px;
+   border: 1px solid;
+
+}
+
+.searchbut{
+padding: 3px 20px 0px 20px;
+border-radius: 10px;
+border: 1px solid;
+color: rgb(247, 248, 247);
+background-color: green;
+
+}
+.inputbutton{
+    display: flex;
+    gap: 10px;
+}
+
+.viewfd{
+        padding-bottom: 20px;
 }

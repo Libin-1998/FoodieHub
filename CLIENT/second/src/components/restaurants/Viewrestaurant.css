@@ -23,6 +23,7 @@
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
+    padding: 20px;
 }
 .honeres{
     text-align: center;
@@ -30,7 +31,7 @@
     padding: 10px;
 }
 .wordsalign{
-    padding-left: 60px;
+    text-align: center;
 }
 .resedit{
     background-color: green;
@@ -43,4 +44,44 @@ margin-right: 2px;
 border: none;
 padding: 3px;
 margin-bottom: 5px;
+color: white;
+
+}
+
+.reseditlink{
+    color: white;
+}
+
+
+.ressearchbox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    gap: 40px;
+    flex-wrap: wrap;
+    
+}
+.resviewhead{
+    margin: 0;
+}
+.ressearch{
+    height: 30px;
+   width:250px;
+   border-radius:10px;
+   border: 1px solid;
+
+}
+
+.ressearchbut{
+padding: 3px 20px 0px 20px;
+border-radius: 10px;
+border: 1px solid;
+color: rgb(247, 248, 247);
+background-color: green;
+
+}
+.resinputbutton{
+    display: flex;
+    gap: 10px;
 }

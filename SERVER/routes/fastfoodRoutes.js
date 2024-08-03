@@ -19,7 +19,7 @@ const upload=multer({storage})
 
 var fastfoodRoutes=express.Router()
 
-fastfoodRoutes.post('/add',upload.single('image'),async(req,res)=>{
+fastfoodRoutes.post('/add',upload.single('image'),auth,async(req,res)=>{
     const adding={
         name:req.body.name,
         price:req.body.price,
@@ -125,6 +125,8 @@ fastfoodRoutes.put('/update/:id',upload.single('image'),async(req,res)=>{
         })
     }
 })
+
+
 
 
 

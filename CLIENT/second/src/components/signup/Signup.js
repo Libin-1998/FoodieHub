@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import "./Signup.css";
 import axios from 'axios'
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
+
+  const navigate=useNavigate()
+
   const [sign, setsign] = useState({
     firstname: "",
     lastname: "",
@@ -24,9 +28,11 @@ export default function Signup() {
     event.preventDefault()
     axios.post("http://localhost:6060/api/registration/register",sign)
     .then((response)=>{
-// console.log(response);
-console.log(response.data.message);
+console.log(response);
 toast.success(response.data.message)
+setTimeout(() => {
+  navigate('/login')
+}, 2000);
     })
     .catch((error)=>{
       console.log(error);

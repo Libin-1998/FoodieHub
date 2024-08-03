@@ -26,12 +26,17 @@ export default function Login() {
       axios.post("http://localhost:6060/api/foodlogin/login",log)
       .then((response)=>{
         console.log(response);
-        toast.success('login success')
-        localStorage.setItem('isLogin',true)
+        toast.success(response.data.message)
+        
+        sessionStorage.setItem('isLogin',true)
+        sessionStorage.setItem('token',response.data.logintoken)
+        sessionStorage.setItem('role',response.data.loginrole)
+        sessionStorage.setItem('userlogid',response.data.userId)
+
 
 
         setTimeout(() => {
-        navigate('/food')
+        navigate('/')
           window.location.reload()
         }, 2000);
 

@@ -20,6 +20,7 @@ regRoutes.post('/register',async(req,res)=>{
     const log ={
         mobile:req.body.mobile,
         password:hashed,
+        role:'user',
     }
     const save=await regSchema(reg).save()
     const savelog=await logSchema(log).save()

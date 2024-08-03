@@ -1,5 +1,4 @@
 import logo from './logo.svg';
-import './App.css';
 import {BrowserRouter as Router,Routes,Route, Link} from "react-router-dom";
 import Home from './components/home/Home';
 import Works from './components/works/Works';
@@ -15,104 +14,21 @@ import Viewfoods from './components/viewfastfoods/Viewfoods';
 import Editfood from './components/editfood/Editfood';
 import Editrestaurant from './components/editrestaurant/Editrestaurant';
 import 'react-toastify/dist/ReactToastify.css';
+import Navbar from './components/navbar/Navbar';
+import Cart from './components/cart/Cart';
+import Searchpage from './components/searchpage/Searchpage';
+import Profile from './components/profile/Profile';
+import Editprofile from './components/editprofile/Editprofile';
 
 function App() {
 
-  const logs=localStorage.getItem('isLogin')
-  console.log(logs);
-
-  const removes=()=>{
-localStorage.removeItem('isLogin')
-  }
+ 
 
 
   return (
     <>
     <Router>
-        <div className='container-fluid navbar'>
-        <img src={'/images/logo-food.png'} height={'70px'} width={'150px'}className='foodlog'></img>
-        <ul className='nav'>
-          <li>
-            <Link to={"/"}>
-            <a className='nav1' href=''>Home</a>
-            </Link>
-            </li>
-         {/* <li>
-          <Link to={"/howitworks"}>
-          <a className='nav1' href='#'>How it works</a>
-          </Link>
-          </li> */}
-
-         {/* <li>
-          <Link to={"/features"}>
-          <a className='nav1' href='#'> Features</a>
-          </Link>
-          </li> */}
-
-         {/* <li>
-         <Link to={"/cuisines"}>
-          <a className='nav1' href='#'>Cuisines</a>
-          </Link>
-          </li> */}
-        
-
-          
-
-          <li>
-         <Link to={"/fastfood"}>
-          <a className='nav1' href=''>Add FastFood</a>
-          </Link>
-          </li>
-
-          <li>
-         <Link to={"/food"}>
-          <a className='nav1' href=''>FastFood</a>
-          </Link>
-          </li>
-
-          <li>
-            <Link to={'/addres'}>
-              <a className='nav1' href=''>Add Restaurants</a>
-            </Link>
-          </li>
-
-          <li>
-            <Link to={'/restaurants'}>
-              <a className='nav1' href=''>Restaurants</a>
-            </Link>
-          </li>
-
-
-{logs=='true'?(
-<>
-<li>
-<a className='nav1' href='' onClick={removes}>Logout</a>
-</li>
-
-
-</>
-):(
-  <>
-
-<li>
-         <Link to={"/login"}>
-          <a className='nav1' href=''>Login</a>
-          </Link>
-          </li>
-  
-          <li>
-         <Link to={"/signup"}>
-          <a className='nav1' href=''>Signup</a>
-          </Link>
-          </li>
-  </>
-)
-
-}
-          
-         
-        </ul>
-        </div>
+        <Navbar/>
         <Routes>
           <Route exact path='/' element={<Home/>}/>
           <Route  path='/howitworks' element={<Works/>}/>
@@ -126,6 +42,10 @@ localStorage.removeItem('isLogin')
           <Route  path='/food' element={<Viewfoods/>}/>
           <Route  path='/editfood/:id' element={<Editfood/>}/>
           <Route  path='/editrestaurant/:id' element={<Editrestaurant/>}/>
+          <Route path='/cart' element={<Cart/>}/>
+          <Route path='/searchpage/:name' element={<Searchpage/>}/>
+          <Route path='/profile' element={<Profile/>}/>
+          <Route path='/editprofile/:id' element={<Editprofile/>}/>
 
         </Routes>
           <Footer/>
