@@ -18,7 +18,7 @@ export default function Editrestaurant() {
 
   useEffect(() => {
 
-    axios.get(`http://localhost:6060/api/newres/view/${id}`)
+    axios.get(`https://foodiehub-r5ze.onrender.com/api/newres/view/${id}`)
       .then((response) => {
         console.log(response);
         setResinput(response.data.data);
@@ -51,7 +51,7 @@ export default function Editrestaurant() {
     data.append('image',resinput.image)
 
     axios
-      .put(`http://localhost:6060/api/newres/update/${id}`,data)
+      .put(`https://foodiehub-r5ze.onrender.com/api/newres/update/${id}`,data)
       .then((response) => {
         console.log(response);
 

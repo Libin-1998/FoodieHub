@@ -16,7 +16,7 @@ export default function Viewrestaurant() {
 
     
     useEffect(()=>{
-        axios.get("http://localhost:6060/api/newres/view",{
+        axios.get("https://foodiehub-r5ze.onrender.com/api/newres/view",{
             headers:{Authorization:`Bearer ${logintoken}`}
         })
         .then((response)=>{
@@ -46,7 +46,7 @@ export default function Viewrestaurant() {
 
     const resDelete=(id)=>{
         console.log(id);
-        axios.delete(`http://localhost:6060/api/newres/delete/${id}`)
+        axios.delete(`https://foodiehub-r5ze.onrender.com/api/newres/delete/${id}`)
         .then((response)=>{
             console.log(response);
             toast.success(response.data.message)

@@ -17,7 +17,7 @@ export default function Editfood() {
       const {id}=useParams()
 
       useEffect(()=>{
-        axios.get(`http://localhost:6060/api/food/foodview/${id}`)
+        axios.get(`https://foodiehub-r5ze.onrender.com/api/food/foodview/${id}`)
         .then((response)=>{
           console.log(response);
           setsubmitfd(response.data.data)
@@ -51,7 +51,7 @@ export default function Editfood() {
 
 
         axios
-          .put(`http://localhost:6060/api/food/update/${id}`, data)
+          .put(`https://foodiehub-r5ze.onrender.com/api/food/update/${id}`, data)
           .then((response) => {
             console.log(response);
             

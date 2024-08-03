@@ -35,7 +35,7 @@ export default function Fastfood() {
 
 
     axios
-      .post("http://localhost:6060/api/food/add", formdata,
+      .post("https://foodiehub-r5ze.onrender.com/api/food/add", formdata,
         {headers:{Authorization:`Bearer ${token}`}}
       )
       .then((response) => {

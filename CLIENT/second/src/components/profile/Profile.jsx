@@ -10,7 +10,7 @@ export default function Profile() {
     const [state,Setstate]=useState({})
 
 useEffect(()=>{
-    axios.get(`http://localhost:6060/api/foodlogin/profile/${id}`)
+    axios.get(`https://foodiehub-r5ze.onrender.com/api/foodlogin/profile/${id}`)
     .then((response)=>{
         console.log(response);
         Setstate(response.data.data[0])

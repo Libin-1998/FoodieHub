@@ -9,7 +9,7 @@ const initialState={
 }
 
 export const postData=createAsyncThunk('logs/post',async(list)=>{
-    const data=await axios.post('http://localhost:6060/api/foodlogin/login',JSON.stringify(list),{
+    const data=await axios.post('https://foodiehub-r5ze.onrender.com/api/foodlogin/login',JSON.stringify(list),{
         headers:{Authorization:`Bearer ${token}`},
 
     })
