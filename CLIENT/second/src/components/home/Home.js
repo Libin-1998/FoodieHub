@@ -10,9 +10,14 @@ export default function Home() {
   const logintoken = sessionStorage.getItem("token");
   const navigate = useNavigate();
 
+
   const [search, setSearch] = useState([]);
   const [items, Setitems] = useState([]);
   const [searchTerm,setSearchterm]=useState('')
+
+
+
+  
 
   useEffect(()=>{
     axios.get("https://foodiehub-r5ze.onrender.com/api/newres/view",{
@@ -31,28 +36,28 @@ export default function Home() {
 console.log(search);
 
 
-
-
 const SearchButton= async()=>{
-  const filteredItems = search.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
-  console.log(filteredItems);
-Setitems(filteredItems);
+  if(logintoken){
+    const filteredItems = search.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    console.log(filteredItems);
+   Setitems(filteredItems);
+  
+    
+    navigate(`/searchpage/${filteredItems[0]?.name}`);
+    console.log(filteredItems[0]?.name);
+  }
+ else{
+  navigate('/login')
+ }
 
-setTimeout(() => {
-  navigate(`/searchpage/${filteredItems[0]?.name}`);
-  console.log(filteredItems[0]?.name);
-}, 100);
 
 }
-console.log(items)
-
+console.log(items) 
 
 const dataChange=(event)=>{
   setSearchterm(event.target.value)
 
 } 
-
-
 
   return (
     <>
@@ -72,7 +77,9 @@ const dataChange=(event)=>{
             name="search"
             value={searchTerm}
           ></input>
+          
           <i class="icon fa fa-search" onClick={SearchButton}></i>
+         
         </div>
       </div>
       <Works />
