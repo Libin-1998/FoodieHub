@@ -46,9 +46,8 @@ toast.error(error.response.data.message)
       <div className="container signupfood">
         <ToastContainer/>
         <img
-          src={"./images/loginfood.jpg"}
-          height={"100%"}
-          width={"100%"}
+          src={"./images/fdREG.jpg"}
+          className="signupimg"
         ></img>
         <div className="signup">
           <h1>Signup</h1>

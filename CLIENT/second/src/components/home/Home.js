@@ -71,7 +71,7 @@ const dataChange=(event)=>{
         <div className="searchbox">
           <input
             type="text"
-            placeholder="Restaurants,foods"
+            placeholder="Restaurants"
             className="search"
             onChange={dataChange}
             name="search"

@@ -54,8 +54,8 @@ export default function Login() {
       <div className="container foodlogin">
         <ToastContainer/>
         <img
-          src={"./images/loginfood.jpg"}
-          height={"100%"}
+          src={"./images/bar-food.jpg"}
+          height={"450px"}
           width={"100%"}
         ></img>
         <div className="login">
