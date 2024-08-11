@@ -28,7 +28,7 @@ export const Profileslice=createSlice({
         })
         .addCase(postData.fulfilled,(state,action)=>{
             state.status='idle'
-            state.profileData=action.payload
+            state.profileData=action.payload    
             console.log(action.payload);
         })
         .addCase(postData.rejected,(state,action)=>{

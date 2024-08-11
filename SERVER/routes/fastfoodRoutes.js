@@ -126,8 +126,4 @@ fastfoodRoutes.put('/update/:id',upload.single('image'),async(req,res)=>{
     }
 })
 
-
-
-
-
 module.exports=fastfoodRoutes

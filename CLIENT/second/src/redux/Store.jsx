@@ -7,7 +7,7 @@ import profileReducer from './reducers/Profileslice'
 export const store=configureStore({
     reducer:{
         foods:foodReducer,
-        login:loginReducer,
+        // login:loginReducer,
         myProfile:profileReducer,
     },
 })
