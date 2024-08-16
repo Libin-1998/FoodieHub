@@ -16,7 +16,7 @@ export default function Home() {
   const [searchTerm,setSearchterm]=useState('')
 
   useEffect(()=>{
-    axios.get("http://localhost:6060/api/newres/view",{
+    axios.get("https://foodiehub-ujkn.onrender.com/api/newres/view",{
         headers:{Authorization:`Bearer ${logintoken}`}
     })
     .then((response)=>{

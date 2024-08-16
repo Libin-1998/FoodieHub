@@ -25,7 +25,7 @@ export default function Editprofile() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:6060/api/foodlogin/profile/${id}`)
+      .get(`https://foodiehub-ujkn.onrender.com/api/foodlogin/profile/${id}`)
       .then((response) => {
         console.log(response);
         Setdata(response.data.data[0]);

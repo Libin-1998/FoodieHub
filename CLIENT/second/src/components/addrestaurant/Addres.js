@@ -33,7 +33,7 @@ export default function Addres() {
     formdata.append("image", resinput.image);
 
     axios
-      .post("http://localhost:6060/api/newres/add_res", formdata, {
+      .post("https://foodiehub-ujkn.onrender.com/api/newres/add_res", formdata, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {

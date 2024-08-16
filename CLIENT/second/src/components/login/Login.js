@@ -23,7 +23,7 @@ export default function Login() {
 
     const logsubmit=(event)=>{
       event.preventDefault()
-      axios.post("http://localhost:6060/api/foodlogin/login",log)
+      axios.post("https://foodiehub-ujkn.onrender.com/api/foodlogin/login",log)
       .then((response)=>{
         console.log(response);
         toast.success(response.data.message)

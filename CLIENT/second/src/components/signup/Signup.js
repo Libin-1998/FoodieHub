@@ -26,7 +26,7 @@ export default function Signup() {
 
   const register=(event)=>{
     event.preventDefault()
-    axios.post("http://localhost:6060/api/registration/register",sign)
+    axios.post("https://foodiehub-ujkn.onrender.com/api/registration/register",sign)
     .then((response)=>{
 console.log(response);
 toast.success(response.data.message)
