@@ -11,13 +11,13 @@ export default function Editfood() {
         name: "",
         price: "",
         quality: "",
-        image:'',
+        image:"",
       });
 
       const {id}=useParams()
 
       useEffect(()=>{
-        axios.get(`https://foodiehub-r5ze.onrender.com/api/food/foodview/${id}`)
+        axios.get(`http://localhost:6060/api/food/foodview/${id}`)
         .then((response)=>{
           console.log(response);
           setsubmitfd(response.data.data)
@@ -51,7 +51,7 @@ export default function Editfood() {
 
 
         axios
-          .put(`https://foodiehub-r5ze.onrender.com/api/food/update/${id}`, data)
+          .put(`http://localhost:6060/api/food/update/${id}`, data)
           .then((response) => {
             console.log(response);
             

@@ -52,7 +52,7 @@ const token=sessionStorage.getItem('token')
 const userid=sessionStorage.getItem('userlogid')
 
 useEffect(()=>{
-    axios.get(`https://foodiehub-r5ze.onrender.com/api/carts/viewcart/${userid}`,{
+    axios.get(`http://localhost:6060/api/carts/viewcart/${userid}`,{
         headers:{Authorization:`Bearer ${token}`}
     })
     .then((response)=>{
@@ -70,7 +70,7 @@ const decrementButton=(id,quantity)=>{
     if(quantity<=1){
         window.location.reload()
     }
-    axios.get(`https://foodiehub-r5ze.onrender.com/api/carts/decrement/${id}`)
+    axios.get(`http://localhost:6060/api/carts/decrement/${id}`)
     .then((response)=>{
         console.log(response);
         Setcart((prevData) =>
@@ -85,7 +85,7 @@ const decrementButton=(id,quantity)=>{
 }
 
 const incrementButton=(id)=>{
-    axios.get(`https://foodiehub-r5ze.onrender.com/api/carts/increment/${id}`)
+    axios.get(`http://localhost:6060/api/carts/increment/${id}`)
     .then((response)=>{
         console.log(response);
         Setcart((prevData)=>

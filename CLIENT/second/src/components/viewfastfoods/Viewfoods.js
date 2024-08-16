@@ -32,7 +32,7 @@ export default function Viewfoods() {
 
   const addCartButton = (id) => {
     console.log(id);
-    axios.post(`https://foodiehub-r5ze.onrender.com/api/carts/addcart/${userid}/${id}`, data)
+    axios.post(`http://localhost:6060/api/carts/addcart/${userid}/${id}`, data)
       .then((response) => {
         console.log(response);
         navigate('/cart');
@@ -44,7 +44,7 @@ export default function Viewfoods() {
 
   const tableDelete = (id) => {
     console.log(id);
-    axios.delete(`https://foodiehub-r5ze.onrender.com/api/food/delete/${id}`)
+    axios.delete(`http://localhost:6060/api/food/delete/${id}`)
       .then((response) => {
         console.log(response);
         toast.success(response.data.message);

@@ -18,6 +18,8 @@ const upload=multer({storage})
 
 restaurantRoutes.post('/add_res', upload.single('image'), auth, async (req, res) => {
     try {
+        console.log(req.body);
+        
       const rest = {
         name: req.body.name,
         state: req.body.state,

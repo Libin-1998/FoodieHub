@@ -9,20 +9,13 @@ export default function Addres() {
 
   const token = sessionStorage.getItem("token");
 
-  const [resinput, setResinput] = useState({
-    name: '',
-    state: '',
-    city: '',
-    time: '',
-    image: null,
-  });
+  const [resinput, setResinput] = useState({});
 
   const reschange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setResinput({ ...resinput, [name]: value });
   };
-  console.log(resinput);
 
   const imageHandler = (event) => {
     setResinput({ ...resinput, image: event.target.files[0] });
@@ -40,7 +33,7 @@ export default function Addres() {
     formdata.append("image", resinput.image);
 
     axios
-      .post("https://foodiehub-r5ze.onrender.com/api/newres/add_res", formdata, {
+      .post("http://localhost:6060/api/newres/add_res", formdata, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {

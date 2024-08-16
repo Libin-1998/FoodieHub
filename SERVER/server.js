@@ -1,6 +1,7 @@
 var express=require('express')
 var mongoose=require('mongoose')
 const cors=require('cors')
+const dotenv=require('dotenv')
 
 const logRoutes = require('./routes/logRoutes')
 const regRoutes = require('./routes/regRoutes')
@@ -10,12 +11,13 @@ const cartRoutes = require('./routes/cartRoutes')
 
 var app=express()
 
+dotenv.config()
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
 // connecting to database
-mongoose.connect('mongodb+srv://libinninteen98:EhF3Fs510HyhC9cd@cluster0.4e1hgmr.mongodb.net/fooddatabase?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect(process.env.MONGO_URL)
 .then(()=>{
     console.log('successfully connected');
 })
@@ -35,8 +37,8 @@ app.use((err,req,res,next)=>{
     res.status(500).send('something broke!')
 })
 
-app.listen(6060,()=>{
-    console.log('running on 6060');
+app.listen(process.env.PORT,()=>{
+    console.log('running on',process.env.PORT);
 })
 
 

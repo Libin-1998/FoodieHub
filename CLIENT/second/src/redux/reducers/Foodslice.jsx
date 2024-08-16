@@ -11,7 +11,7 @@ const token=sessionStorage.getItem('token')
 
 
 export const getfoodData=createAsyncThunk('foodData/get',async()=>{
-    const data=await axios.get('https://foodiehub-r5ze.onrender.com/api/food/foodview',{
+    const data=await axios.get('http://localhost:6060/api/food/foodview',{
         headers:{Authorization:`Bearer ${token}`},
     })
     const result =data.data.data

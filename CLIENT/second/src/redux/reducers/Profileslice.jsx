@@ -11,7 +11,7 @@ const initialState={
 
 export const postData=createAsyncThunk('profile/post',async(item)=>{
     console.log(item);
-    const datas=await axios.post(`https://foodiehub-r5ze.onrender.com/api/foodlogin/update`,item)
+    const datas=await axios.post(`http://localhost:6060/api/foodlogin/update`,item)
 
     const result=await datas.data.data
     console.log(result);

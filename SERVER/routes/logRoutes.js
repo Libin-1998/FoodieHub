@@ -40,7 +40,7 @@ if(!checknumber){
         role:logdata.role,
 
       },
-      'secret_key',
+      process.env.JWT_KEY,
       {
         expiresIn:'1h'
       }

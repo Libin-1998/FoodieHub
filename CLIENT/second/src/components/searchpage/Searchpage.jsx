@@ -17,7 +17,7 @@ console.log(name);
 
 
 useEffect(()=>{
-  axios.get(`https://foodiehub-r5ze.onrender.com/api/newres/viewdata/${name}`,{
+  axios.get(`http://localhost:6060/api/newres/viewdata/${name}`,{
     headers:{Authorization:`Bearer ${token}`},
   })
   .then((response)=>{
