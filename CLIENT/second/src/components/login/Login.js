@@ -16,8 +16,10 @@ export default function Login() {
         const value=event.target.value;
         setlog({...log,[name]:value})
     }
-
     console.log(log);
+
+
+    
 
     const logsubmit=(event)=>{
       event.preventDefault()
@@ -30,8 +32,6 @@ export default function Login() {
         sessionStorage.setItem('token',response.data.logintoken)
         sessionStorage.setItem('role',response.data.loginrole)
         sessionStorage.setItem('userlogid',response.data.userId)
-
-
 
         setTimeout(() => {
         navigate('/')

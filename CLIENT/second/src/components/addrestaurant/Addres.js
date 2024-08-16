@@ -9,7 +9,13 @@ export default function Addres() {
 
   const token = sessionStorage.getItem("token");
 
-  const [resinput, setResinput] = useState({});
+  const [resinput, setResinput] = useState({
+    name: '',
+    state: '',
+    city: '',
+    time: '',
+    image: null,
+  });
 
   const reschange = (event) => {
     const name = event.target.name;
@@ -20,7 +26,7 @@ export default function Addres() {
 
   const imageHandler = (event) => {
     setResinput({ ...resinput, image: event.target.files[0] });
-    console.log(resinput.image);
+    console.log(event.target.files[0]);
   };
 
   const clickbutton = (event) => {
@@ -41,13 +47,14 @@ export default function Addres() {
         console.log(response);
         toast.success(response.data.message);
 
-        // setTimeout(()=>{
-        //     navigate('/restaurants')
-        // },3000)
+        setTimeout(() => {
+          navigate('/restaurants');
+        }, 3000);
       })
       .catch((error) => {
         console.log(error);
-        toast.error("adding failed");
+        const message = error.response?.data?.message || "Adding failed";
+        toast.error(message);
       });
   };
 
@@ -62,60 +69,65 @@ export default function Addres() {
           encType="multipart/form-data"
         >
           <div className="formRes">
-            <label for="" className="resaddlabel">
+            <label htmlFor="restaurantName" className="resaddlabel">
               Restaurant Name<span className="resspan">*</span>
             </label>{" "}
             <br />
             <input
               type="text"
+              id="restaurantName"
               className="resinputadd"
               name="name"
               onChange={reschange}
             ></input>
             <br />
             <br />
-            <label for="" className="resaddlabel">
+            <label htmlFor="restaurantState" className="resaddlabel">
               State<span className="resspan">*</span>
             </label>
             <br />
             <input
               type="text"
+              id="restaurantState"
               className="resinputadd"
               name="state"
               onChange={reschange}
             ></input>
             <br />
             <br />
-            <label for="" className="resaddlabel">
+            <label htmlFor="restaurantCity" className="resaddlabel">
               City<span className="resspan">*</span>
             </label>
             <br />
             <input
               type="text"
+              id="restaurantCity"
               className="resinputadd"
               name="city"
               onChange={reschange}
             ></input>
             <br />
             <br />
-            <label for="" className="resaddlabel">
+            <label htmlFor="restaurantTime" className="resaddlabel">
               Opening Time<span className="resspan">*</span>
             </label>
             <br />
             <input
               type="text"
+              id="restaurantTime"
               className="resinputadd"
               name="time"
               onChange={reschange}
             ></input>
             <br />
             <br />
-            <label for="" className="resaddlabel">
+            <label htmlFor="restaurantImage" className="resaddlabel">
               Image<span className="resspan">*</span>
             </label>
             <br />
             <input
               type="file"
+              id="restaurantImage"
               className="resinputadd"
               name="image"
               onChange={imageHandler}

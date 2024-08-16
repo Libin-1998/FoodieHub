@@ -16,32 +16,31 @@ const storage=multer.diskStorage({
 const upload=multer({storage})
 
 
-restaurantRoutes.post('/add_res',upload.single('image'),auth,async(req,res)=>{
-    const rest={
-        name:req.body.name,
-        state:req.body.state,
-        city:req.body.city,
-        time:req.body.time,
-        image:req.file.filename,
+restaurantRoutes.post('/add_res', upload.single('image'), auth, async (req, res) => {
+    try {
+      const rest = {
+        name: req.body.name,
+        state: req.body.state,
+        city: req.body.city,
+        time: req.body.time,
+        image: req.file.filename,
+      };
+      const save = await Restaurant(rest).save();
+      res.status(201).json({
+        success: true,
+        error: false,
+        message: 'Save successfully',
+        data: save,
+      });
+    } catch (error) {
+      res.status(400).json({
+        success: false,
+        error: true,
+        message: 'Failed to save restaurant',
+      });
     }
-    const save=await restaurantSchema(rest).save()
-    console.log(save);
-    if(save){
-        res.status(201).json({
-            success:true,
-            error:false,
-            message:'save successfully',
-            data:save,
-        })
-    }
-    else{
-        res.status(400).json({
-            success:true,
-            error:false,
-            message:'not saved'
-        })
-    }
-})
+  });
+  
 
 restaurantRoutes.get('/view',auth,async(req,res)=>{
     const views=await restaurantSchema.find()
