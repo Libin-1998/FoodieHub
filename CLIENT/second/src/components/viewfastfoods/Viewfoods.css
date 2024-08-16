@@ -1,7 +1,7 @@
 
 .table{
 border-collapse: collapse;
-width: 70%;
+width: 80%;
 text-align: center;
 margin-left: auto;
 margin-right: auto;
@@ -16,11 +16,11 @@ th,td{
 tr:nth-child(even){
     background-color: gray;
 }
-@media(max-width:680px){
+/* @media(max-width:680px){
     .table{
         width: 100%;
     }
-}
+} */
 .tdedit{
     border: none;
     background-color: green;
@@ -51,9 +51,10 @@ tr:nth-child(even){
 .fdsearchbox{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 50px;
     gap: 40px;
+    flex-wrap: wrap;
     
 }
 .viewhead{
@@ -81,5 +82,14 @@ background-color: green;
 }
 
 .viewfd{
-        padding-bottom: 20px;
+        padding:20px 10px 20px 10px;
+}
+
+@media(max-width:508px){
+  .editlinks{
+    padding:0px 8px 0px 8px;
+  }
+  .tdedit{
+    margin-bottom: 5px;
+  }
 }

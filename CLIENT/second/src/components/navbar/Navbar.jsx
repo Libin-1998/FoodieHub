@@ -1,8 +1,13 @@
 import React from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+
 
 export default function Navbar() {
+
+  const navigate=useNavigate()
+
   const logs = sessionStorage.getItem("isLogin");
   console.log(logs);
 
@@ -11,6 +16,21 @@ export default function Navbar() {
   const removes = () => {
     sessionStorage.clear();
   };
+
+  const dataChange=(event)=>{
+    event.preventDefault()
+    toast.success('Please Login First')
+    setTimeout(() => {
+    navigate('/login')
+    }, 3000);
+  }
+
+  const datasChange=()=>{
+    toast.success('Please Login First')
+    setTimeout(() => {
+    navigate('/login')
+    }, 3000);
+  }
 
   return (
     <>
@@ -21,6 +41,8 @@ export default function Navbar() {
           width={"150px"}
           className="foodlog"
         ></img>
+          
+<ToastContainer/>
         <ul className="nav">
           {logs == "true" ? (
             <>
@@ -34,7 +56,7 @@ export default function Navbar() {
 
               <li>
                 <Link to={"/food"}>
-                  <a className="nav1" href="">
+                  <a className="nav1" href="" >
                     FastFood
                   </a>
                 </Link>
@@ -103,16 +125,16 @@ export default function Navbar() {
               </li>
 
               <li>
-                <Link to={"/food"}>
-                  <a className="nav1" href="">
+                <Link to={"/"}>
+                  <a className="nav1" href="" onClick={dataChange}>
                     FastFood
                   </a>
                 </Link>
               </li>
 
               <li>
-                <Link to={"/restaurants"}>
-                  <a className="nav1" href="">
+                <Link to={"/"}>
+                  <a className="nav1" href="" onClick={datasChange}>
                     Restaurants
                   </a>
                 </Link>
@@ -137,6 +159,15 @@ export default function Navbar() {
           )}
         </ul>
       </div>
+
+
+
+
+
     </>
   );
 }
+
+
+
+

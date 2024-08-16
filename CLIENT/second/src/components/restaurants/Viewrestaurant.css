@@ -34,29 +34,32 @@
     text-align: center;
 }
 .resedit{
-    background-color: green;
+background-color: green;
 border: none;
-padding: 3px;
 margin-right: 2px;
+height: 29px;
 }
+
 .resdelete{
-    background-color: red;
+background-color: red;
 border: none;
-padding: 3px;
-margin-bottom: 5px;
 color: white;
+font-weight: bold;
+padding: 7px;
 
 }
 
 .reseditlink{
     color: white;
+    font-weight: bold;
+    padding: 8px;
 }
 
 
 .ressearchbox{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 50px;
     gap: 40px;
     flex-wrap: wrap;
@@ -67,10 +70,15 @@ color: white;
 }
 .ressearch{
     height: 30px;
-   width:250px;
-   border-radius:10px;
-   border: 1px solid;
+    width:250px;
+    border-radius:10px;
+    border: 1px solid;
+}
 
+@media(max-width:400px){
+    .ressearch{
+        width: auto;
+    }
 }
 
 .ressearchbut{
