@@ -9,8 +9,8 @@ const restaurantRoutes = require('./routes/restaurantRoutes')
 const cartRoutes = require('./routes/cartRoutes')
 
 var app=express()
-app.use(cors())
 
+app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
@@ -30,8 +30,9 @@ app.use('/api/newres',restaurantRoutes)
 app.use('/api/carts',cartRoutes)
 
 
-app.get('/',(req,res)=>{
-    res.send('server is on')
+app.use((err,req,res,next)=>{
+    console.error(err.stack);
+    res.status(500).send('something broke!')
 })
 
 app.listen(6060,()=>{

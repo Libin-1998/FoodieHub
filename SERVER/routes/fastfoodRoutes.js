@@ -20,6 +20,9 @@ const upload=multer({storage})
 var fastfoodRoutes=express.Router()
 
 fastfoodRoutes.post('/add',upload.single('image'),auth,async(req,res)=>{
+    try {
+        
+  
     const adding={
         name:req.body.name,
         price:req.body.price,
@@ -41,6 +44,13 @@ fastfoodRoutes.post('/add',upload.single('image'),auth,async(req,res)=>{
             message:'not saved'
         })
     }
+} catch (error) {
+        return res.status(500).json({
+            success:false,
+            error:true,
+            message:'something went wrong'
+        })
+}
 })
 
 fastfoodRoutes.get('/foodview',auth,async(req,res)=>{

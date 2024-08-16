@@ -15,10 +15,6 @@ export default function Home() {
   const [items, Setitems] = useState([]);
   const [searchTerm,setSearchterm]=useState('')
 
-
-
-  
-
   useEffect(()=>{
     axios.get("https://foodiehub-r5ze.onrender.com/api/newres/view",{
         headers:{Authorization:`Bearer ${logintoken}`}
