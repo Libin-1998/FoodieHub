@@ -46,7 +46,7 @@ export default function RecipeReviewCard() {
 
 const [cart,Setcart]=useState([])
 const [totalPrice, setTotalPrice] = useState(0);
-const [open, setOpen] = React.useState();
+const [open, setOpen] = useState();
 
 const token=sessionStorage.getItem('token')
 const userid=sessionStorage.getItem('userlogid')
@@ -103,7 +103,7 @@ const incrementButton=(id)=>{
 
 useEffect(()=>{
   const calculateTotalPrice=()=>{
-    const total =cart.reduce((acc,item)=>acc+item.productId.price * item.quantity,0)
+    const total =cart.reduce((acc,item)=>acc+item?.productId?.price * item.quantity,0)
     setTotalPrice(total)
   }
   calculateTotalPrice()
@@ -142,16 +142,16 @@ const DrawerList = (
       <CardMedia
         component="img"
         height="194"
-        image={`/images/${datas.productId.image}`}
+        image={`/images/${datas?.productId?.image}`}
         src=''
         alt=""
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary" display={'flex'} justifyContent={'space-between'}>
             <div>
-      <p>{datas.productId.name}</p>   
-      <p>{datas.productId.price}</p>
-      <p>{datas.productId.quality}</p>
+      <p>{datas?.productId?.name}</p>   
+      <p>{datas?.productId?.price}</p>
+      <p>{datas?.productId?.details}</p>
       <button className='buybutton'>Buy Now</button>
       </div>
       <div className='plusminus'>
@@ -159,7 +159,7 @@ const DrawerList = (
         <p>{datas.quantity}</p>
         <p onClick={()=>incrementButton(datas._id)}>+</p>
       </div>
-      <p>${datas.productId.price*datas.quantity}</p>
+      <p>${datas?.productId?.price*datas.quantity}</p>
         </Typography>
       </CardContent>
       <CardActions disableSpacing>

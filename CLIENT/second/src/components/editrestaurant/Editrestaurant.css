@@ -16,19 +16,22 @@
 .resspan{
     color: red;
 }
-.resbutton{
+.editresbutton{
     padding: 10px;
     background-color: orange;
     color: white;
     border: none;
 }
+
 .form{
     padding-left: 300px;
 }
+
 .reseditbutton{
     text-align: center;
 margin-bottom: 10px;
 }
+
 @media(max-width:416px){
     .form,.reseditbutton{
         padding-left: 10px;

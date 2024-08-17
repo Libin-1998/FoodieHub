@@ -121,7 +121,7 @@ export default function Addres() {
             <input
               type="file"
               id="restaurantImage"
-              className="resinputadd"
+              className="resinputaddimg"
               name="image"
               onChange={imageHandler}
             ></input>

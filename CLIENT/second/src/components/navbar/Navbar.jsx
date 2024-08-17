@@ -32,6 +32,15 @@ export default function Navbar() {
     }, 3000);
   }
 
+  const clickProfile=(event)=>{
+    event.preventDefault()
+toast.success('Haii Admin')
+setTimeout(() => {
+  navigate('/profile')
+}, 1000);
+
+  }
+
   return (
     <>
       <div className="container-fluid navbar">
@@ -70,13 +79,7 @@ export default function Navbar() {
                 </Link>
               </li>
 
-              <li>
-                <Link to={"/cart"}>
-                  <a className="nav1" href="">
-                    Cart
-                  </a>
-                </Link>
-              </li>
+             
 
               {roles == "admin" ? (
                 <>
@@ -97,15 +100,25 @@ export default function Navbar() {
                   </li>
                 </>
               ) : (
-                ""
-              )}
-
-              <li>
-                <Link to={"/profile"}>
+                <>
+                <li>
+                <Link to={"/cart"}>
                   <a className="nav1" href="">
-                    Profile
+                    Cart
                   </a>
                 </Link>
+              </li>
+
+                </>
+              )}
+
+
+              <li>
+                {/* <Link to={"/profile"}> */}
+                  <a className="nav1" href="" onClick={clickProfile}>
+                    Profile
+                  </a>
+                {/* </Link> */}
               </li>
 
               <li>

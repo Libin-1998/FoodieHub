@@ -21,8 +21,9 @@
     height: 30px;
     opacity: 50%;
 }
-.namecolor{
-    color: black;
+.viewfdnamecolor{
+    color: white;
+    text-shadow: 4px 4px 4px black;
 }
 .butfd{
     text-align: center;

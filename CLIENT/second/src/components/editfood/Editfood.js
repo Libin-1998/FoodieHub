@@ -90,7 +90,7 @@ export default function Editfood() {
           <div className="fdcolone"></div>
           <div className="fdcoltwo">
           
-              <label for="" className="namecolor">
+              <label for="" className="editnamecolor">
                 <b>
                   Name<span className="spancolor">*</span>
                 </b>

@@ -26,7 +26,7 @@ fastfoodRoutes.post('/add',upload.single('image'),auth,async(req,res)=>{
     const adding={
         name:req.body.name,
         price:req.body.price,
-        quality:req.body.quality,
+        details:req.body.details,
         image:req.file.filename,
     }
     const save=await fastfoodSchema(adding).save()
@@ -114,7 +114,7 @@ fastfoodRoutes.put('/update/:id',upload.single('image'),async(req,res)=>{
     const edit={
         name:req.body.name?req.body.name:olddata.name,
         price:req.body.price?req.body.price:olddata.price,
-        quality:req.body.quality?req.body.quality:olddata.quality,
+        details:req.body.details?req.body.details:olddata.details,
         image:req.file?req.file.filename:olddata.image,
     }
     const updates=await fastfoodSchema.updateOne({_id:req.params.id},{$set:edit})

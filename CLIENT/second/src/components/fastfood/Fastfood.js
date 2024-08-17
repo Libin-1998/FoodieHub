@@ -30,7 +30,7 @@ export default function Fastfood() {
     const formdata=new FormData()
     formdata.append('name',submitfd.name)
     formdata.append('price',submitfd.price)
-    formdata.append('quality',submitfd.quality)
+    formdata.append('details',submitfd.details)
     formdata.append('image',submitfd.image)
 
 
@@ -66,7 +66,7 @@ export default function Fastfood() {
           <div className="fdcolone"></div>
           <div className="fdcoltwo">
 
-              <label for="" className="namecolor">
+              <label for="" className="viewfdnamecolor">
                 <b>
                   Name<span className="spancolor">*</span>
                 </b>
@@ -81,7 +81,7 @@ export default function Fastfood() {
               <br />
               <br />
 
-              <label for="" className="namecolor">
+              <label for="" className="viewfdnamecolor">
                 <b>
                   Price<span className="spancolor">*</span>
                 </b>
@@ -96,22 +96,22 @@ export default function Fastfood() {
               <br />
               <br />
 
-              <label for="" className="namecolor">
+              <label for="" className="viewfdnamecolor">
                 <b>
-                  Quality<span className="spancolor">*</span>
+                  Details<span className="spancolor">*</span>
                 </b>
               </label>
               <br />
               <input
                 type="text"
                 className="fdinput"
-                name="quality"
+                name="details"
                 onChange={submitchange}
               ></input>
               <br />
               <br />
 
-              <label for="" className="namecolor">
+              <label for="" className="viewfdnamecolor">
                 <b>
                 image<span className="spancolor">*</span>
                 </b>

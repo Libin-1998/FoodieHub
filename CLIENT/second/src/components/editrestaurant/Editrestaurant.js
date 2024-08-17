@@ -161,7 +161,7 @@ export default function Editrestaurant() {
 
         </div>
         <div className="reseditbutton">
-          <button type="submit" className="resbutton">
+          <button type="submit" className="editresbutton">
             Submit
           </button>
           </div>

@@ -1,4 +1,4 @@
-
+/* 
 .table{
 border-collapse: collapse;
 width: 80%;
@@ -16,11 +16,7 @@ th,td{
 tr:nth-child(even){
     background-color: gray;
 }
-/* @media(max-width:680px){
-    .table{
-        width: 100%;
-    }
-} */
+
 .tdedit{
     border: none;
     background-color: green;
@@ -46,7 +42,7 @@ tr:nth-child(even){
 
 .buybutton{
     border: none;
-}
+} */
 
 .fdsearchbox{
     display: flex;
@@ -85,11 +81,110 @@ background-color: green;
         padding:20px 10px 20px 10px;
 }
 
-@media(max-width:508px){
+/* @media(max-width:508px){
   .editlinks{
     padding:0px 8px 0px 8px;
   }
   .tdedit{
     margin-bottom: 5px;
   }
-}
+} */
+
+
+
+
+/* From Uiverse.io by alexruix */ 
+.viewfdcard {
+    width: 230px;
+    height: 350px;
+    padding: .8em;
+    background: #f5f5f5;
+    position: relative;
+    overflow: visible;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+   }
+   
+   .viewfdcard-img {
+    height: 50%;
+    width: 100%;
+    border-radius: .3rem;
+    transition: .3s ease;
+   }
+   
+   .viewfdcard-info {
+    padding-top: 6%;
+   }
+   
+   svg {
+    width: 20px;
+    height: 20px;
+   }
+   
+   .viewfdcard-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+   }
+   
+   /*Text*/
+   .viewfdtext-title {
+    font-weight: 900;
+    font-size: 1.2em;
+    line-height: 1.5;
+   }
+   
+   .viewfdtext-body {
+    font-size: .9em;
+    padding-bottom: 10px;
+   }
+   
+   /*Button*/
+   .viewfdcard-button {
+    border: 1px solid #252525;
+    display: flex;
+    padding: .3em;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: .3s ease-in-out;
+   }
+   
+   /*Hover*/
+   .viewfdcard-img:hover {
+    transform: translateY(-25%);
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+   
+   .viewfdcard-button:hover {
+    border: 1px solid #ffcaa6;
+    background-color: #ffcaa6;
+   }
+   
+   .fdd{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 20px;
+   }
+   .adminbutton{
+    display: flex;
+    gap: 8px;
+   }
+   .adminedit{
+    background-color: green;
+    border: none;
+    padding: 5px;
+    font-size: medium;
+    font-weight: bold;
+    color: white;
+   }
+   .admindelete{
+    background-color: red;
+    border: none;
+    font-size: medium;
+    font-weight: bold;
+    color: white;
+   }
