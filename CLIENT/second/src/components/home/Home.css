@@ -68,11 +68,14 @@ body{
    
   }
   @media(max-width:400px){
-    .icon{
-      display: none;
-    }
     .search{
       width: 150px;
     }
   }
+
+  /* @media(max-width:570px){
+    .search{
+      width: 80%;
+    }
+  } */
   
