@@ -68,5 +68,7 @@ padding-right: 0%;
     }
     .viewfdnamecolor{
         color: white;
+        text-shadow: 4px 4px 4px black;
+
     }
 }
