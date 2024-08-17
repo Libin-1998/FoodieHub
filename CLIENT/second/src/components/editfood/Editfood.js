@@ -80,64 +80,64 @@ export default function Editfood() {
 
   return (
     <>
-      <div className="container-fluid bgfastfood">
+      <div className="container-fluid editbgfastfood">
         <form onSubmit={submitclick} encType='multipart/form-data'>
         {/* <form> */}
       
         <ToastContainer/>
-        <h1 className="fdhead">EDIT FAST FOODS </h1>
-        <div className="foodrow">
-          <div className="fdcolone"></div>
-          <div className="fdcoltwo">
+        <h1 className="editfdhead">EDIT FAST FOODS </h1>
+        <div className="editfoodrow">
+          <div className="editfdcolone"></div>
+          <div className="editfdcoltwo">
           
               <label for="" className="editnamecolor">
                 <b>
-                  Name<span className="spancolor">*</span>
+                  Name<span className="editspancolor">*</span>
                 </b>
               </label>
               <br />
               <input
                 type="text"
-                className="fdinput"
+                className="editfdinput"
                 name="name" value={submitfd.name}
                 onChange={submitchange}
               ></input>
               <br />
               <br />
 
-              <label for="" className="namecolor">
+              <label for="" className="editnamecolor">
                 <b>
-                  Price<span className="spancolor">*</span>
+                  Price<span className="editspancolor">*</span>
                 </b>
               </label>
               <br />
               <input
                 type="text"
-                className="fdinput"
+                className="editfdinput"
                 name="price" value={submitfd.price}
                 onChange={submitchange}
               ></input>
               <br />
               <br />
 
-              <label for="" className="namecolor">
+              <label for="" className="editnamecolor">
                 <b>
-                  Quality<span className="spancolor">*</span>
+                  Quality<span className="editspancolor">*</span>
                 </b>
               </label>
               <br />
               <input
                 type="text"
-                className="fdinput"
+                className="editfdinput"
                 name="quality" value={submitfd.quality}
                 onChange={submitchange}
               ></input>
               <br />
               <br />
 
-              <label for="" className="namecolor">
+              <label for="" className="editnamecolors">
                 <b>
-                  image<span className="spancolor">*</span>
+                  image<span className="editspancolor">*</span>
                 </b>
               </label>
 
@@ -147,7 +147,7 @@ export default function Editfood() {
                <br />
               <input
                 type="file"
-                className="filecolor"
+                className="editfilecolor"
                 name="image"
                 onChange={imagechange}
               ></input>
@@ -155,10 +155,10 @@ export default function Editfood() {
               <br />
             
           </div>
-          <div className="fdcolthree"></div>
+          <div className="editfdcolthree"></div>
         </div>
-        <div className="butfd">
-          <button type='submit' className="fdsubmit">
+        <div className="editbutfd">
+          <button type='submit' className="editfdsubmit">
           {/* <button onClick={submitclick} className="fdsubmit"> */}
 
             Submit

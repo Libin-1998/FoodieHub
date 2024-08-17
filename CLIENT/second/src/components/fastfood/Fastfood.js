@@ -61,10 +61,11 @@ export default function Fastfood() {
       <form onSubmit={submitclick} encType="multipart/form-data">
 
         <ToastContainer/>
-        <h1 className="fdhead">FAST FOODS </h1>
         <div className="foodrow">
           <div className="fdcolone"></div>
+
           <div className="fdcoltwo">
+          <h1 className="fdhead">FAST FOODS </h1>
 
               <label for="" className="viewfdnamecolor">
                 <b>
@@ -126,14 +127,14 @@ export default function Fastfood() {
               <br />
               <br />
 
-          </div>
-          <div className="fdcolthree"></div>
-        </div>
-        <div className="butfd">
+              <div className="butfd">
           <button type="submit" className="fdsubmit">
             Submit
           </button>
         </div>
+          </div>
+        </div>
+       
         </form>
 
       </div>

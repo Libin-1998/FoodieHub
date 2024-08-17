@@ -1,21 +1,20 @@
-.ebgfastfood{
-    /* background-image: url(../../../public/images/fastfoodbg.png); */
+.editbgfastfood{
     background-image: url(../../../public/images/viewfdBG.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     
 }
-.fdhead{
+.editfdhead{
     text-align: center;
     color: white;
     padding-top: 40px;
 }
-.foodrow{
+.editfoodrow{
     display: flex;
     justify-content: space-evenly;
 }
-.fdinput{
+.editfdinput{
     padding-left: 100px;
     padding-right: 100px;
     height: 30px;
@@ -24,11 +23,11 @@
 .editnamecolor{
     color: black;
 }
-.butfd{
+.editbutfd{
     text-align: center;
     
 }
-.fdsubmit{
+.editfdsubmit{
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
@@ -36,16 +35,16 @@
     border: none;
     font-size: medium;
 }
-.spancolor{
+.editspancolor{
     color: red;
     font-size: medium;
 }
 @media(max-width:600px){
-    .fdinput{
+    .editfdinput{
 padding-left: 0%;
 padding-right: 0%;
     }
 }
-.filecolor{
+.editfilecolor{
     color: white;
 }

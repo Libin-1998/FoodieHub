@@ -1,34 +1,40 @@
 .bgfastfood{
-    /* background-image: url(../../../public/images/fastfoodbg.png); */
     background-image: url(../../../public/images/viewfdBG.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
-    
+    padding: 30px;
 }
+
 .fdhead{
     text-align: center;
     color: white;
     padding-top: 40px;
 }
+
 .foodrow{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
+
 .fdinput{
     padding-left: 100px;
     padding-right: 100px;
     height: 30px;
     opacity: 50%;
+    width: 45%;
 }
+
 .viewfdnamecolor{
-    color: white;
-    text-shadow: 4px 4px 4px black;
+    color: black;
+    text-shadow: 4px 4px 4px white;
+    font-size: medium;
+    font-weight: bold;
 }
+
 .butfd{
     text-align: center;
-    
 }
+
 .fdsubmit{
     padding: 5px;
     padding-left: 10px;
@@ -36,17 +42,28 @@
     background-color: green;
     border: none;
     font-size: medium;
+    color: white;
+    font-weight: bold;
 }
+
 .spancolor{
     color: red;
     font-size: medium;
 }
+
 @media(max-width:600px){
     .fdinput{
 padding-left: 0%;
 padding-right: 0%;
     }
 }
+
 .filecolor{
     color: white;
+}
+
+@media(max-width:601px){
+    .fdinput{
+        width: 100%;
+    }
 }
