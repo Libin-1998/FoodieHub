@@ -49,7 +49,7 @@ export default function Login() {
 
   return (
     <>
-      <div className="container foodlogin">
+      <div className="container-fluid foodlogin">
         <ToastContainer/>
         <img
           src={"./images/bar-food.jpg"}
@@ -71,8 +71,8 @@ export default function Login() {
               className="inputmobile" name="password" onChange={logchange}
             ></input>
           </div>
-          <a href="">
-            <span style={{ color: "red" }}>Forgot Password?</span>
+          <a href="" >
+            <span style={{ color: "red"}}>Forgot Password?</span>
           </a>
         </div>
         <div className="buttonlogin">

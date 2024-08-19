@@ -1,99 +1,26 @@
-/* 
-.table{
-border-collapse: collapse;
-width: 80%;
-text-align: center;
-margin-left: auto;
-margin-right: auto;
-margin-bottom: 30px;
-
-}
-th,td{
-   border: solid 1px; 
-   height: 80px;
-   width: 100px;
-}
-tr:nth-child(even){
-    background-color: gray;
-}
-
-.tdedit{
-    border: none;
-    background-color: green;
-    margin-right: 5px;
-    padding: 5px;
-
-}
-.tddelete{
-    border: none;
-    background-color: red;
-    margin-right: 5px;
-    padding: 5px;
-    color: white;
-
-}
-.imgcircle{
-    border-radius: 100%;
-}
-
-.editlinks{
-    color: white;
-}
-
-.buybutton{
-    border: none;
-} */
-
-.fdsearchbox{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px;
-    gap: 40px;
-    flex-wrap: wrap;
-    
-}
-.viewhead{
-    margin: 0;
-}
-.foodsearch{
-    height: 30px;
-   width:250px;
-   border-radius:10px;
-   border: 1px solid;
-
-}
-
-.searchbut{
-padding: 3px 20px 0px 20px;
-border-radius: 10px;
-border: 1px solid;
-color: rgb(247, 248, 247);
-background-color: green;
-
-}
-.inputbutton{
-    display: flex;
-    gap: 10px;
-}
-
 .viewfd{
-        padding:20px 10px 20px 10px;
+padding: 20px;
 }
 
-/* @media(max-width:508px){
-  .editlinks{
-    padding:0px 8px 0px 8px;
-  }
-  .tdedit{
-    margin-bottom: 5px;
-  }
-} */
+.fdsearchhead{
+display: flex;
+justify-content: center;
+gap: 40px;
+flex-wrap: wrap;
+padding: 20px;
+}
 
+.fdsearchform{
+padding: 10px;
+}
 
+.fdsearchbrand{
+padding: 10px;
+font-size: large;
+font-weight: bold;
+text-align: center;
+}
 
-
-/* From Uiverse.io by alexruix */ 
 .viewfdcard {
     width: 230px;
     height: 350px;
@@ -162,7 +89,7 @@ background-color: green;
     background-color: #ffcaa6;
    }
    
-   .fdd{
+   .viewfdbox{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -188,3 +115,6 @@ background-color: green;
     font-weight: bold;
     color: white;
    }
+
+
+

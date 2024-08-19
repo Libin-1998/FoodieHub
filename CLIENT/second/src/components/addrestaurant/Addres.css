@@ -1,28 +1,3 @@
-/* .reshead{
-    text-align: center;
-    color: orange;
-}
-.resinputadd{
-    width: 50%;
-    height: 31px;
-
-}
-
-.resspan{
-    color: red;
-}
-.formres{
-    text-align: center;
-    padding-bottom: 30px;
-    width: 100%;
-}
-.resbutton{
-    padding: 10px;
-    background-color: orange;
-    color: white;
-    border: none;
-} */
-
 .addRespage{
     padding: 30px;
     background-image: url(../../../public/images/resBG.jpg);
@@ -38,6 +13,7 @@
 .addreshead{
     text-align: center;
     color: white;
+    padding-bottom: 40px;
 }
 
 .resinputadd{

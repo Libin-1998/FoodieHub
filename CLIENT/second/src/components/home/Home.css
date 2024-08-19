@@ -21,61 +21,54 @@ body{
   .nearyou{
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
-  .search{
-    padding: 15px;
-    border-radius: 30px;
-    /* text-align: center; */
-    border: none;
-    width: 350px;
-   
-  }
-  .searchbox{
-    text-align: center;
-    position: relative;
-  
-  }
-  .icon{
-    position: absolute;
-    top: 16px;
-    right: 36%;
-  }
-  @media(max-width:1076px){
-    .search{
-      width: 320px;
-    }
-  }
-  @media(max-width:992px){
-    .search{
-      width: 290px;
-    }
-  }
-  @media(max-width:786px){
-    .search{
-      width: 210px;
-    }
-    .food{
-      /* flex-direction: column; */
-      height: auto;
-      width: auto;
-      padding-bottom: 20px;
-    }
-  }
-  @media(max-width:576px){
-    .search{
-      width: 180px;
-    }
-   
-   
-  }
-  @media(max-width:400px){
-    .search{
-      width: 150px;
-    }
-  }
+ 
 
-  /* @media(max-width:570px){
-    .search{
-      width: 80%;
-    }
-  } */
+.homesearchbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homesearch {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #f4f2f2;
+  border: none;
+  color: #646464;
+  padding: 0.7rem 1rem;
+  border-radius: 30px;
+  width: 20em;
+  transition: all ease-in-out .5s;
+  margin-right: -2rem;
+}
+
+.homesearch:hover, .homesearch:focus {
+  box-shadow: 0 0 1em #00000013;
+}
+
+.homesearch:focus {
+  outline: none;
+  background-color: #f0eeee;
+}
+
+.homesearch::-webkit-input-placeholder {
+  font-weight: 100;
+  color: #ccc;
+}
+
+.homesearch:focus + .search__button {
+  background-color: #f0eeee;
+}
+
+.searching {
+  border: none;
+  margin-top: .1em;
+  padding-right: 0px;
+}
+
+.searching:hover {
+  cursor: pointer;
+}
+
+
   

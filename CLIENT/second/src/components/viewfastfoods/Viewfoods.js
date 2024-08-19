@@ -68,73 +68,13 @@ export default function Viewfoods() {
 
   return (
     <>
-      {/* <div className='container-fluid viewfd'>
-        <ToastContainer />
-        <div className='fdsearchbox'>
-          <h1 className='viewhead'>FOODS</h1>
-          <div className='inputbutton'>
-            <input
-              type="text"
-              className='foodsearch'
-              onChange={handleSearchInputChange}
-              value={searchTerm}
-              name='search'
-            />
-            <button className='searchbut' onClick={searchButton}>Search</button>
-          </div>
-        </div>
-        <table className='table'>
-          <thead>
-            <tr className='trs'>
-              <th>S.no</th>
-              <th>NAME</th>
-              <th>PRICE</th>
-              <th>QUALITY</th>
-              <th>Image</th>
-              {role === 'admin' ? (
-                <th>Edit/Delete</th>
-              ) : (
-                <th>Buy Now</th>
-              )}
-            </tr>
-          </thead>
-          <tbody>
-            {list.map((foodtable, index) => (
-              <tr key={index}>
-                <td>{index + 1}</td>
-                <td>{foodtable.name}</td>
-                <td>{foodtable.price}</td>
-                <td>{foodtable.quality}</td>
-                <td>
-                  <img src={`/images/${foodtable.image}`} height={'80px'} width={'70px'} className='imgcircle' />
-                </td>
-                {role === 'admin' ? (
-                  <td>
-                    <button className='tdedit'>
-                      <Link to={`/editfood/${foodtable._id}`} className='editlinks'>Edit</Link>
-                    </button>
-                    <button className='tddelete' onClick={() => tableDelete(foodtable._id)}>Delete</button>
-                  </td>
-                ) : (
-                  <td>
-                    <span onClick={() => addCartButton(foodtable._id)}>
-                      <ShoppingCartIcon />
-                    </span>
-                    <div>Buy Now</div>
-                  </td>
-                )}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div> */}
+    
 
 
 
-  {/* Hello world */}
   <div className='container-fluid viewfd'>
   <ToastContainer />
-  <div className='fdsearchbox'>
+  {/* <div className='fdsearchbox'>
           <h1 className='viewhead'>FOODS</h1>
           <div className='inputbutton'>
             <input
@@ -146,8 +86,24 @@ export default function Viewfoods() {
             />
             <button className='searchbut' onClick={searchButton}>Search</button>
           </div>
-        </div>
-        <div className='fdd'>
+        </div> */}
+
+
+        <nav class="navbar-fdsearchbox">
+  <div class="container-fluid fdsearchhead">
+    <a class="navbar-brand fdsearchbrand">FOODS</a>
+    <form class="d-flex fdsearchform" role="search" >
+      <input class="form-control me-2 inputfoodsearch" type="search" placeholder="Search" aria-label="Search"
+       onChange={handleSearchInputChange}
+       value={searchTerm}
+       name='search'/>
+      <button class="btn bg-success fdsearchbut" type="submit" onClick={searchButton}>Search</button>
+    </form>
+  </div>
+</nav>
+
+
+        <div className='viewfdbox'>
         {list.map((foodtable)=>(
   <div class="viewfdcard">
     <img src={`/images/${foodtable.image}`} height={'100%'} width={'100%'} className='viewfdcard-img'></img>

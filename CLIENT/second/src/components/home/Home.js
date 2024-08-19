@@ -57,26 +57,26 @@ const dataChange=(event)=>{
 
   return (
     <>
-      <div className="container food">
+      <div className="container-fluid food">
         <div className="near">
           <h1 className="nearyou">Find Restaurants Near You</h1>
           <p>
             <b>Order Delivery Food Online From Local Restaurants</b>
           </p>
         </div>
-        <div className="searchbox">
-          <input
-            type="text"
-            placeholder="Restaurants"
-            className="search"
+
+
+<div class="search homesearchbox">
+    <input type="text" class="search__input homesearch"  placeholder="Restaurants"
             onChange={dataChange}
             name="search"
-            value={searchTerm}
-          ></input>
-          
+            value={searchTerm}/>
+    <button class="search__button searching">
+      
           <i class="icon fa fa-search" onClick={SearchButton}></i>
-         
-        </div>
+
+    </button>
+</div>
       </div>
       <Works />
       <Features />

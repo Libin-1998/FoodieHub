@@ -15,9 +15,9 @@ export default function Features() {
             <img src={'./images/defaulticon.png'}height={'100px'} width={'100px'}></img>
             </div>
             <div className='column'>
-            <p><b>Deva</b><br></br>
-            Indian,Chinese,Healthy,Pizza,Vegitarian<br></br>
-            B-46 Near Veena Clinic Vikas Nagar Uttam Nagar<br></br>
+            <p><b>Deva</b><br/>
+            Indian , Chinese , Healthy , Pizza , Vegitarian <br/>
+            B-46 Near Veena Clinic Vikas Nagar Uttam Nagar<br/>
             Delivery<i class="fa-light fa-circle-check"></i>
             Pick-up<i class="fa-light fa-circle-check"></i>
             Dinein<i class="fa-light fa-circle-check"></i>  
@@ -33,9 +33,9 @@ export default function Features() {
             </div>
 
             <div className='column'>
-            <p><b>Restaurant Two</b><br></br>
-            American, Indian, Thai, Chinese, Pizza<br></br>
-            Connaught Place New Delhi Delhi 110001<br></br>
+            <p><b>Restaurant Two</b><br/>
+            American, Indian, Thai, Chinese, Pizza<br/>
+            Connaught Place New Delhi Delhi 110001<br/>
             Delivery<i class="fa-light fa-circle-check"></i>
             Pick-up<i class="fa-light fa-circle-check"></i>
             Dinein<i class="fa-light fa-circle-check"></i>  

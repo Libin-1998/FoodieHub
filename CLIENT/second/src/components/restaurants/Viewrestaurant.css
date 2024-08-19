@@ -1,43 +1,8 @@
-.resimgone{
-    height: 200px;
-    width: 300px;
-}
-.resimgtwo{
-    height: 200px;
-    width: 300px;
-}
-.resimgthree{
-    height: 200px;
-    width: 300px;
-}
-.resimgfour{
-    height: 200px;
-    width: 300px;
-}
-.resimgfive{
-    height: 200px;
-    width: 300px;
-}
-.resrow{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-    padding: 20px;
-}
-.honeres{
-    text-align: center;
-    background-color: pink;
-    padding: 10px;
-}
-.wordsalign{
-    text-align: center;
-}
 .resedit{
 background-color: green;
 border: none;
 margin-right: 2px;
-height: 29px;
+
 }
 
 .resdelete{
@@ -45,51 +10,132 @@ background-color: red;
 border: none;
 color: white;
 font-weight: bold;
-padding: 7px;
-
 }
 
 .reseditlink{
     color: white;
     font-weight: bold;
-    padding: 8px;
-}
+} 
 
 
-.ressearchbox{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px;
-    gap: 40px;
-    flex-wrap: wrap;
-    
-}
-.resviewhead{
-    margin: 0;
-}
-.ressearch{
-    height: 30px;
-    width:250px;
-    border-radius:10px;
-    border: 1px solid;
-}
-
-@media(max-width:400px){
-    .ressearch{
-        width: auto;
-    }
-}
 
 .ressearchbut{
-padding: 3px 20px 0px 20px;
 border-radius: 10px;
 border: 1px solid;
 color: rgb(247, 248, 247);
 background-color: green;
 
 }
-.resinputbutton{
-    display: flex;
-    gap: 10px;
+
+.ressearchbut{
+    padding: 3px 20px 3px 20px;
 }
+
+
+.viewres{
+    padding: 20px;
+    }
+
+.ressearchhead{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.ressearchbrand{
+padding: 10px;
+font-size: 20px;
+font-weight: bold;
+text-align: center;
+color: #f89b29;
+
+}
+
+.ressearchform{
+padding: 10px;
+
+}
+
+.resrow{
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.rescard {
+    position: relative;
+    width: 330px;
+    height: 230px;
+    background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100% );
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+
+  @media(max-width:350px){
+    .rescard{
+        height: 220px;
+        width: 180px;
+    }
+   
+  }
+
+  .resname{
+    color: #09f841;
+  }
+
+  .rescol{
+    padding: 20px;
+  }
+  
+  .card:hover {
+    transform: rotate(-5deg) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .rescontent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    background-color: #070707;
+    color: white;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card:hover .card__content {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 1;
+  }
+  
+  .card__title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+  }
+  
+  .card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+  }
+  
+  .card:hover svg {
+    scale: 0;
+    transform: rotate(-45deg);
+  }
+  

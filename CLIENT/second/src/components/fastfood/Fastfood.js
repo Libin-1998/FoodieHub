@@ -62,7 +62,6 @@ export default function Fastfood() {
 
         <ToastContainer/>
         <div className="foodrow">
-          <div className="fdcolone"></div>
 
           <div className="fdcoltwo">
           <h1 className="fdhead">FAST FOODS </h1>

@@ -14,19 +14,22 @@
 .foodrow{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+}
+
+.fdcoltwo{
+    width: 60%;
 }
 
 .fdinput{
-    padding-left: 100px;
-    padding-right: 100px;
     height: 30px;
     opacity: 50%;
-    width: 45%;
+    width: 100%;
 }
 
 .viewfdnamecolor{
-    color: black;
-    text-shadow: 4px 4px 4px white;
+    color: white;
+    text-shadow: 4px 4px 4px black;
     font-size: medium;
     font-weight: bold;
 }
@@ -51,21 +54,21 @@
     font-size: medium;
 }
 
-@media(max-width:600px){
+/* @media(max-width:600px){
     .fdinput{
 padding-left: 0%;
 padding-right: 0%;
     }
-}
+} */
 
 .filecolor{
     color: white;
 }
 
 @media(max-width:601px){
-    .fdinput{
+    /* .fdinput{
         width: 100%;
-    }
+    } */
     .viewfdnamecolor{
         color: white;
         text-shadow: 4px 4px 4px black;

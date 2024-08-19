@@ -53,7 +53,7 @@ export default function Editprofile() {
   return (
     <>
       <div className="profileeditpage">
-        <h1 style={{ textAlign: "center" }}>Profile Edit</h1>
+        <h1 className="editprofilehead" >Profile Edit</h1>
         <form class="editprofilecolorful-form">
           <div class="editprofileform-group">
             <label class="editprofileform-label" for="name">

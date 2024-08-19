@@ -43,7 +43,7 @@ toast.error(error.response.data.message)
   
   return (
     <>
-      <div className="container signupfood">
+      <div className="container-fluid signupfood">
         <ToastContainer/>
         <img
           src={"./images/fdREG.jpg"}

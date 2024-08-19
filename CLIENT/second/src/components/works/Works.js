@@ -4,7 +4,7 @@ import "./Works.css"
 export default function Works() {
   return (
     <>
-    <div className='container work'>
+    <div className='container-fluid work'>
         <div className='how'>
         <h2>How it works</h2>
         <p>Get your favorite food in 4 simple steps</p>

@@ -4,6 +4,7 @@ import "./Cuisines.css"
 export default function Cuisines() {
   return (
     <>
+    <div className='container-fluid browsing'>
     <div className='row browse'>
         <div className='column'>
             <img src={'./images/cuisine.png'}></img>
@@ -44,7 +45,7 @@ export default function Cuisines() {
             </div>
         </div>
     </div>
-      
+    </div>
     </>
   )
 }

@@ -77,65 +77,48 @@ export default function Viewrestaurant() {
     <div className='container-fluid viewres'>
 <ToastContainer/>
 
-<div className='ressearchbox'>
-          <h1 className='resviewhead'>RESTAURANT</h1>
-          <div className='resinputbutton'>
-            <input
-              type="text"
-              className='ressearch'
-              onChange={dataChange}
-              name='search'
-              value={searchTerm}
-             
-            />
-            <button className='ressearchbut' onClick={searchbutton}>Search</button>
-          </div>
-        </div>
+        <nav class="navbar-ressearchbox">
+  <div class="container-fluid ressearchhead">
+    <a class="navbar-brand ressearchbrand">RESTAURANTS</a>
+    <form class="d-flex ressearchform" role="search" >
+      <input class="form-control me-2 inputressearch" type="search" placeholder="Search" aria-label="Search"
+       onChange={dataChange}
+       value={searchTerm}
+       name='search'/>
+      <button class="btn bg-success ressearchbut" type="submit" onClick={searchbutton}>Search</button>
+    </form>
+  </div>
+</nav>
+
 
     <div className='resrow'>
 
-        {items.length==0 ?(<>
-        
-        {card.map((fivestar)=>(
-            
-            <div className='rescol'>
-            <img src={`/images/${fivestar.image}`} className='resimgone'></img>
-            <div className='wordsalign'>
-            <h2>{fivestar.name}</h2>
-            <h3>{fivestar.state}</h3>
-            <h3>{fivestar.city}</h3>
-            <h3>{fivestar.time}</h3>
-            {role=='admin' ?(<>
-            <button className='resedit'><Link to={`/editrestaurant/${fivestar._id}`} className='reseditlink'>Edit</Link></button>
-            <button className='resdelete' onClick={()=>resDelete(fivestar._id)}>Delete</button>
-            </>):('')}
-            {}
-            </div>
-        </div>
-        ))}
-        
-        </>):(<>
-        {items.map((datas)=>(
+{card.map((datas)=>(
 
-<div className='rescol'>
-            <img src={`/images/${datas.image}`} className='resimgone'></img>
-            <div className='wordsalign'>
-            <h2>{datas.name}</h2>
-            <h3>{datas.state}</h3>
-            <h3>{datas.city}</h3>
-            <h3>{datas.time}</h3>
+ <div className='rescol'>
+    <div class="card rescard">
+    <img src={`/images/${datas.image}`} className='resimgages'height={'100%'} width={'100%'}></img>
+    
+    <div class="rescontent card__content">
+  
+            <div className='restexts'>
+            <h3 className='resname'>{datas.name}</h3>
+            <h5>{datas.state}</h5>
+            <h5>{datas.city}</h5>
+            <h5>{datas.time}</h5>
             {role=='admin' ?(<>
             <button className='resedit'><Link to={`/editrestaurant/${datas._id}`} className='reseditlink'>Edit</Link></button>
             <button className='resdelete' onClick={()=>resDelete(datas._id)}>Delete</button>
             </>):('')}
             {}
             </div>
+            </div>
+            </div>
         </div>
 
 ))}
-         
-        </>)}
-        
+
+
         </div>
     </div>
     </>
