@@ -19,7 +19,7 @@ export default function Addres() {
 
   const imageHandler = (event) => {
     setResinput({ ...resinput, image: event.target.files[0] });
-    console.log(event.target.files[0]);
+    console.log(resinput.image);
   };
 
   const clickbutton = (event) => {

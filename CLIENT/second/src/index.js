@@ -15,12 +15,12 @@ const online = navigator.onLine;
 console.log(typeof online);
 
 root.render(
-  // <React.StrictMode>
+  <React.StrictMode>
     <Provider store={store}>
     {online==true ? <App />:<Loader/>}
     </Provider>
    
-  // </React.StrictMode>
+  </React.StrictMode>
 );
 
 

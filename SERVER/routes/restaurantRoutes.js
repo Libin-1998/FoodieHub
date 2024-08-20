@@ -8,33 +8,37 @@ const auth = require('../middlewares/auth')
 var restaurantRoutes=express.Router()
 
 const storage=multer.diskStorage({
-    destination:function(req,file,cb){
-        cb(null,'../client/second/public/images/')},
+    destination: function (req,file,cb){
+        cb(null,'../second/public/images/')
+    },
         filename:function(req,file,cb){
-            cb(null,file.originalname)}
+            cb(null,file.originalname)
+        },
 })
 const upload=multer({storage})
 
 
 restaurantRoutes.post('/add_res', upload.single('image'), auth, async (req, res) => {
     try {
-        console.log(req.body);
-        
+      console.log(req.body);
+  
       const rest = {
         name: req.body.name,
         state: req.body.state,
         city: req.body.city,
         time: req.body.time,
-        image: req.file.filename,
+        image: req.file ? req.file.filename : null, // Ensure the image field is handled properly
       };
+  
       const save = await Restaurant(rest).save();
       res.status(201).json({
         success: true,
         error: false,
-        message: 'Save successfully',
+        message: 'Saved successfully',
         data: save,
       });
     } catch (error) {
+      console.error(error); // Log the error for debugging purposes
       res.status(400).json({
         success: false,
         error: true,
@@ -42,6 +46,7 @@ restaurantRoutes.post('/add_res', upload.single('image'), auth, async (req, res)
       });
     }
   });
+  
   
 
 restaurantRoutes.get('/view',auth,async(req,res)=>{
