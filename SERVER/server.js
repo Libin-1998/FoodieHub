@@ -36,6 +36,11 @@ app.use((err,req,res,next)=>{
     console.error(err.stack);
     res.status(500).send('something broke!')
 })
+app.use(cors({
+    origin: 'http://localhost:3000', // Replace with your client's origin
+    methods: 'GET,POST,PUT,DELETE',
+    allowedHeaders: 'Content-Type,Authorization'
+}));
 
 app.listen(process.env.PORT,()=>{
     console.log('running on',process.env.PORT);

@@ -81,13 +81,10 @@ export default function Editfood() {
   return (
     <>
       <div className="container-fluid editbgfastfood">
-        <form onSubmit={submitclick} encType='multipart/form-data'>
-        {/* <form> */}
+        <form className='formeditfd' onSubmit={submitclick} encType='multipart/form-data'>
       
         <ToastContainer/>
         <h1 className="editfdhead">EDIT FAST FOODS </h1>
-        <div className="editfoodrow">
-          <div className="editfdcolone"></div>
           <div className="editfdcoltwo">
           
               <label for="" className="editnamecolor">
@@ -135,7 +132,7 @@ export default function Editfood() {
               <br />
               <br />
 
-              <label for="" className="editnamecolors">
+              <label for="" className="editnamecolor">
                 <b>
                   image<span className="editspancolor">*</span>
                 </b>
@@ -154,12 +151,9 @@ export default function Editfood() {
               <br />
               <br />
             
-          </div>
-          <div className="editfdcolthree"></div>
         </div>
         <div className="editbutfd">
           <button type='submit' className="editfdsubmit">
-          {/* <button onClick={submitclick} className="fdsubmit"> */}
 
             Submit
           </button>
