@@ -4,7 +4,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { postData } from "../../redux/reducers/Profileslice";
-import { toast, ToastContainer } from "react-toastify";
 
 export default function Editprofile() {
   const navigate = useNavigate();
@@ -42,23 +41,18 @@ export default function Editprofile() {
     Setdata({ ...data, [name]: value });
   };
 
- 
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
     dispath(postData(data));
-    
-    const handleSubmit = (event) => {
-      event.preventDefault();
-    // toast.success('profile updated')
-
     setTimeout(() => {
       navigate("/profile");
-    }, 3000);
+    }, 100);
   };
 
   return (
     <>
       <div className="profileeditpage">
-        <ToastContainer/>
         <h1 className="editprofilehead" >Profile Edit</h1>
         <form class="editprofilecolorful-form">
           <div class="editprofileform-group">
