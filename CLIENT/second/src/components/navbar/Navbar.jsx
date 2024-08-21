@@ -90,9 +90,7 @@ export default function Navbar() {
                 </a>
               </>
             )}
-            <a class="nav-link" href="/profile">
-              Profile
-            </a>
+           
             <a class="nav-link" href="/" onClick={removes}>
               Logout
             </a>
