@@ -46,7 +46,7 @@ export default function Editfood() {
         const data=new FormData()
         data.append('name',submitfd.name)
         data.append('price',submitfd.price)
-        data.append('quality',submitfd.quality)
+        data.append('details',submitfd.details)
         data.append('image',submitfd.image)
 
 
@@ -122,14 +122,14 @@ export default function Editfood() {
 
               <label for="" className="editnamecolor">
                 <b>
-                  Quality<span className="editspancolor">*</span>
+                  Details<span className="editspancolor">*</span>
                 </b>
               </label>
               <br />
               <input
                 type="text"
                 className="editfdinput"
-                name="quality" value={submitfd.quality}
+                name="details" value={submitfd.details}
                 onChange={submitchange}
               ></input>
               <br />

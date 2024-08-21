@@ -9,7 +9,7 @@ var restaurantRoutes=express.Router()
 
 const storage=multer.diskStorage({
     destination: function (req,file,cb){
-        cb(null,'../second/public/images/')
+        cb(null,'../client/second/public/images/')
     },
         filename:function(req,file,cb){
             cb(null,file.originalname)
