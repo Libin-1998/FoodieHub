@@ -78,6 +78,10 @@ export default function Navbar() {
                 <a class="nav-link" href="/addres">
                   Add Restaurants
                 </a>
+                <a class="nav-link" href="" onClick={clickProfile}>
+              Profile
+            </a>
+
               </>
             ) : (
               <>
@@ -86,7 +90,7 @@ export default function Navbar() {
                 </a>
               </>
             )}
-            <a class="nav-link" href="" onClick={clickProfile}>
+            <a class="nav-link" href="/profile">
               Profile
             </a>
             <a class="nav-link" href="/" onClick={removes}>
