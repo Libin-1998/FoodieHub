@@ -58,11 +58,15 @@ export default function Viewfoods() {
       });
   };
 
-  const searchButton = () => {
+  const searchButton = (event) => {
+    event.preventDefault()
     setList(data.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase())));
+    
   };
 
   const handleSearchInputChange = (event) => {
+    console.log(event);
+    
     setSearchTerm(event.target.value);
   };
 

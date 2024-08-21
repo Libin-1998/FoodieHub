@@ -63,10 +63,10 @@ export default function Viewrestaurant() {
         
     }
 
-    const searchbutton=()=>{
+    const searchbutton=(event)=>{
+        event.preventDefault()
         setItems(card.filter(item=>item.name.toLowerCase().includes(searchTerm.toLowerCase())))
     }
-    console.log(items);
 
     const dataChange=(event)=>{
     setSearchterm(event.target.value)
@@ -93,7 +93,7 @@ export default function Viewrestaurant() {
 
     <div className='resrow'>
 
-{card.map((datas)=>(
+{items.map((datas)=>(
 
  <div className='rescol'>
     <div class="card rescard">
