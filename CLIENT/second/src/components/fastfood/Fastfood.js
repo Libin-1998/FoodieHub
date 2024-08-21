@@ -10,6 +10,7 @@ export default function Fastfood() {
   const token=sessionStorage.getItem('token')
 
   const [submitfd, setsubmitfd] = useState({});
+  
   const navigate=useNavigate()
 
 

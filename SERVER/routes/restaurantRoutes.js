@@ -4,12 +4,9 @@ const multer=require('multer')
 const restaurantSchema = require('../models/restaurantSchema')
 const auth = require('../middlewares/auth')
 
-
-var restaurantRoutes=express.Router()
-
 const storage=multer.diskStorage({
     destination: function (req,file,cb){
-        cb(null,'../client/second/public/images/')
+        cb(null,'../CLIENT/second/public/images/')
     },
         filename:function(req,file,cb){
             cb(null,file.originalname)
@@ -17,6 +14,7 @@ const storage=multer.diskStorage({
 })
 const upload=multer({storage})
 
+var restaurantRoutes=express.Router()
 
 restaurantRoutes.post('/add_res', upload.single('image'), auth, async (req, res) => {
     try {
@@ -27,23 +25,32 @@ restaurantRoutes.post('/add_res', upload.single('image'), auth, async (req, res)
         state: req.body.state,
         city: req.body.city,
         time: req.body.time,
-        image: req.file ? req.file.filename : null, // Ensure the image field is handled properly
+        image:req.file.filename,
       };
   
-      const save = await Restaurant(rest).save();
-      res.status(201).json({
-        success: true,
-        error: false,
-        message: 'Saved successfully',
-        data: save,
-      });
+      const save = await restaurantSchema(rest).save();
+      if(save){
+        res.status(201).json({
+            success: true,
+            error: false,
+            message: 'Saved successfully',
+            data: save,
+          });
+      }
+      else{
+        res.status(400).json({
+            success:false,
+            error:true,
+            message:'not saved'
+        })
+      }
+      
     } catch (error) {
-      console.error(error); // Log the error for debugging purposes
-      res.status(400).json({
-        success: false,
-        error: true,
-        message: 'Failed to save restaurant',
-      });
+        return res.status(500).json({
+            success:false,
+            error:true,
+            message:'something went wrong'
+        })
     }
   });
   
@@ -52,7 +59,7 @@ restaurantRoutes.post('/add_res', upload.single('image'), auth, async (req, res)
 restaurantRoutes.get('/view',auth,async(req,res)=>{
     const views=await restaurantSchema.find()
     if(views){
-        res.status(200).json({
+       return res.status(200).json({
             success:true,
             error:false,
             message:'view successfully',
@@ -71,7 +78,7 @@ restaurantRoutes.get('/view',auth,async(req,res)=>{
 restaurantRoutes.get('/view/:id',async(req,res)=>{
     const views=await restaurantSchema.findOne({_id:req.params.id})
     if(views){
-        res.status(200).json({
+       return res.status(200).json({
             success:true,
             error:false,
             message:'view successfully',
@@ -79,7 +86,7 @@ restaurantRoutes.get('/view/:id',async(req,res)=>{
         })
     }
     else{
-        res.status(400).json({
+        return res.status(400).json({
             success:false,
             error:true,
             message:'not viewed'
@@ -106,8 +113,6 @@ restaurantRoutes.get('/viewdata/:name',auth,async(req,res)=>{
         })
     }
 })
-
-
 
 
 restaurantRoutes.delete('/delete/:id',async(req,res)=>{
