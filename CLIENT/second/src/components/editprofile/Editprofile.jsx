@@ -45,9 +45,9 @@ export default function Editprofile() {
     event.preventDefault();
 
     dispath(postData(data));
-    setTimeout(() => {
       navigate("/profile");
-    }, 100);
+    window.location.reload()
+
   };
 
   return (
