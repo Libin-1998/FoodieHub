@@ -59,7 +59,6 @@ export default function Editrestaurant() {
         toast.success(response.data.message)
         
         setTimeout(()=>{
-
           navigate('/restaurants')
         },2000)
 
